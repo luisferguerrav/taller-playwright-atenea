@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/luisferguerrav/taller-playwright-atenea#readme",
   "devDependencies": {
-    "@playwright/test": "^1.52.0",
+    "@playwright/test": "^1.53.1",
     "@types/node": "^22.15.30"
   }
 }
