@@ -24,12 +24,19 @@ export class RegisterPage {
         await this.page.waitForLoadState('networkidle')
     }
 
-    async completarFormularioRegistro (firstName: string, lastName: string, email: string, password:string){
-        await this.firtNameImput.fill(firstName);
-        await this.lastNameImput.fill(lastName);
-        await this.emailImput.fill(email);
-        await this.passwordImput.fill(password)
+    // async completarFormularioRegistro (firstName: string, lastName: string, email: string, password:string){
+    //     await this.firtNameImput.fill(firstName);
+    //     await this.lastNameImput.fill(lastName);
+    //     await this.emailImput.fill(email);
+    //     await this.passwordImput.fill(password)
 
+    // }  //EJEMPLO SIN EL JSON 
+
+    async completarFormularioRegistro(usuario:{nombre:string, apellido:string, email: string, password:string}){
+        await this.firtNameImput.fill(usuario.nombre);
+        await this.lastNameImput.fill(usuario.apellido);
+        await this.emailImput.fill(usuario.email);
+        await this.passwordImput.fill(usuario.password);
     }
 
     async hacerClickBotonRegistro (){
@@ -42,10 +49,15 @@ export class RegisterPage {
         
     }
 
-    async completarYhacerClickBotonRegistro (firstName: string, lastName: string, email: string, password: string){
-        await this.completarFormularioRegistro(firstName, lastName, email, password);
-        await this.hacerClickBotonRegistro();
+    // async completarYhacerClickBotonRegistro (firstName: string, lastName: string, email: string, password: string){
+    //     await this.completarFormularioRegistro(firstName, lastName, email, password);
+    //     await this.hacerClickBotonRegistro();
 
+    // }  //EJEMPLO SIN EL JSON
+
+    async completarYhacerClickBotonRegistro (usuario:{nombre:string, apellido:string, email:string, password:string}){
+        await this.completarFormularioRegistro(usuario);
+        await this.hacerClickBotonRegistro();
     }
 
 }
